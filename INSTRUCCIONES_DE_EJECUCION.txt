@@ -1,0 +1,34 @@
+REQUISITOS
+- SDK .NET 10 instalado.
+- Visual Studio 2026 o una versión compatible con .NET 10, con la carga de trabajo ASP.NET y desarrollo web.
+
+ESTRUCTURA DE LA SOLUCION (DemoAPIPOO2026-2.sln)
+- DemoAPIPOO2026-2 : proyecto API (Controllers, Swagger, interfaz web en wwwroot, Program.cs).
+- Datos            : contexto de datos en memoria.
+- Modelos          : entidades, DTO/ y Resultados/.
+- Servicios        : Interfaces/, Servicios/ y ConfiguracionDatos.cs (inyección de dependencias).
+- Pruebas_Unitarias: proyecto de pruebas xUnit y guía de pruebas.
+
+ABRIR
+1. Extraiga el ZIP completo en una carpeta local.
+2. Abra DemoAPIPOO2026-2.sln.
+3. Espere la restauración de paquetes NuGet.
+4. Seleccione el proyecto DemoAPIPOO2026-2 como proyecto de inicio.
+5. Seleccione el perfil http y ejecute.
+6. Se abre la pantalla de INICIO DE SESION en http://localhost:5101/ (Swagger sigue en http://localhost:5101/swagger).
+
+USUARIOS DE DEMOSTRACION
+- admin / Admin123* (Administrador)
+- consulta / Consulta123* (Consulta)
+En la pantalla de inicio el usuario y la contraseña se escriben MANUALMENTE; la interfaz no los muestra ni los rellena.
+- Administrador: ve la tabla y puede crear, editar y eliminar proyectos.
+- Consulta: solo ve la tabla y los consolidados (sin botones de edición).
+En Swagger, pulse Authorize: pide usuario y contraseña (deje client_id y client_secret vacíos).
+
+PRUEBAS
+Desde la carpeta donde está DemoAPIPOO2026-2.sln ejecute:
+  dotnet test
+Más detalle en Pruebas_Unitarias/GUIA_PRUEBAS_UNITARIAS.md
+
+IMPORTANTE
+El proyecto usa almacenamiento en memoria. Los cambios se pierden al detener o reiniciar la API. Las credenciales y clave JWT son únicamente para desarrollo local, no para producción.
